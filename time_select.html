@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ansara Training Institute</title>
+  <meta name="theme-color" content="#0B5E97">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+  <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="194x194">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="manifest" href="assets/lib/manifest.json">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <style type="text/css">
+  .time_tbl td, .time_tbl th {
+    padding: 8px 3px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  .time_tbl input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+
+  .time_tbl input[type=checkbox]:after {
+    content: "";
+    border-bottom: 10px solid white;
+    border-top: 10px solid white;
+    display: block;
+    opacity: 1;
+    box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, 0.2), 0px 0px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .time_tbl input[type=checkbox]:checked:after {
+    border-bottom: 10px solid #00aced;
+    border-top: 10px solid #00aced;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-light bg-info sd">
+   <div class="col-3">
+       <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="openNav()">
+       <i class="fas fa-sliders-h text-light p-1 border border-light"></i></a>
+   </div>
+    <div class="col-4 text-right"><a class="ml-auto" href=""><!-- <img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"> --></a>
+    </div> 
+    <div class="col">
+      <p class="mb-0 text-center py-1 px-2"><span></span></p>
+    </div> 
+  </nav>
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#myModal">
+      Open modal
+    </button>
+  </div>
+
+
+  <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h6 class="modal-title w-100 text-center"><b>Select Time</b></h6>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body py-2">
+               <div class="float-right" style="font-size:12px">
+                 <span class="px-2" style="border:1px solid lightgray"></span>&ensp;<label>Available</label>&ensp;&ensp;
+                 <span class="px-2" style="border:1px solid lightgray;background: #00aced"></span>&ensp;<label>Selected</label>&ensp;&ensp;
+                 <span class="px-2" style="border:1px solid lightgray;background:#d2d2d2"></span>&ensp;<label>Unavailable</label>
+                </div>
+                <table class="table table-striped time_tbl text-center mb-0">
+                  <thead>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8 AM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>9 AM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>10 AM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>11 AM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>12 AM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>1 PM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>2 PM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>3 PM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>4 PM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                    <tr>
+                      <td>5 PM</td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                      <td><input type="checkbox" name="opt1"></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center p-1">
+              <button type="button" class="btn btn-info btn-sm">Submit</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+</div>
+
+<!-- script files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
