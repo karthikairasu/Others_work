@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Expert csv</title>
+  <meta name="theme-color" content="#0B5E97">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+  <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="194x194">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="manifest" href="assets/lib/manifest.json">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <style type="text/css">
+  .time_tbl td, .time_tbl th {
+    padding: 8px 3px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  .time_tbl input[type=checkbox] {
+    width: 100%;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+
+  .time_tbl input[type=checkbox]:after {
+    content: "";
+    border-bottom: 10px solid white;
+    border-top: 10px solid white;
+    display: block;
+    opacity: 1;
+    box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, 0.2), 0px 0px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .time_tbl input[type=checkbox]:checked:after {
+    border-bottom: 10px solid #00aced;
+    border-top: 10px solid #00aced;
+  }
+    #exportButton {
+        border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-light bg-info sd">
+   <div class="col-3">
+       <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="openNav()">
+       <i class="fas fa-sliders-h text-light p-1 border border-light"></i></a>
+   </div>
+    <div class="col-4 text-right"><a class="ml-auto" href=""><!-- <img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"> --></a>
+    </div> 
+    <div class="col">
+      <p class="mb-0 text-center py-1 px-2"><span></span></p>
+    </div> 
+  </nav>
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+    <!-- Button to Open the Modal -->
+    <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.min.css" />
+
+<div class="container">
+    <button id="exportButton" class="btn btn-lg btn-danger clearfix"><span class="fa fa-file-excel-o"></span> Export to Excel</button>
+
+    <table id="exportTable" class="table table-hover">
+        <thead>
+            <tr>
+              <th>Item</th>
+              <th>Ordered_QTY</th>
+              <th>Awarded_QTY</th>
+              <th>Consumption</th>
+              <th>Needed_QTY</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-orange"><b>Pharma</b></td>
+            <td class="table-orange"></td>
+            <td class="table-orange"></td>
+            <td class="table-orange"></td>
+            <td class="table-orange"></td>
+          </tr>
+           <tr>
+            <td>Hydroxychloroquine</td>
+            <td>4m</td>
+            <td>3k</td>
+            <td>1m</td>
+            <td>2m</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+  </div>
+
+</div>
+
+<!-- script files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- you need to include the shieldui css and js assets in order for the components to work -->
+  <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
+  <script type="text/javascript">
+    jQuery(function ($) {
+        $("#exportButton").click(function () {
+            // parse the HTML table element having an id=exportTable
+            var dataSource = shield.DataSource.create({
+                data: "#exportTable",
+                schema: {
+                    type: "table",
+                    fields: {
+                        Item: { type: String },
+                        Ordered_QTY: { type: String },
+                        Awarded_QTY: { type: String }, 
+                        Consumption: { type: String }, 
+                        Needed_QTY: { type: String } 
+                    }
+                }
+            });
+
+            // when parsing is done, export the data to Excel
+            dataSource.read().then(function (data) {
+                new shield.exp.OOXMLWorkbook({
+                    author: "PrepBootstrap",
+                    worksheets: [
+                        {
+                            name: "PrepBootstrap Table",
+                            rows: [
+                                {
+                                    cells: [
+                                        {
+                                            style: {
+                                                bold: true
+                                            },
+                                            type: String,
+                                            value: "Item"
+                                        },
+                                        {
+                                            style: {
+                                                bold: true
+                                            },
+                                            type: String,
+                                            value: "Ordered QTY"
+                                        },
+                                        {
+                                            style: {
+                                                bold: true
+                                            },
+                                            type: String,
+                                            value: "Awarded QTY"
+                                        },
+                                        {
+                                            style: {
+                                                bold: true
+                                            },
+                                            type: String,
+                                            value: "Consumption"
+                                        },
+                                        {
+                                            style: {
+                                                bold: true
+                                            },
+                                            type: String,
+                                            value: "Needed QTY"
+                                        }
+                                    ]
+                                }
+                            ].concat($.map(data, function(item) {
+                                return {
+                                    cells: [
+                                        { type: String, value: item.Item },
+                                        { type: String, value: item.Ordered_QTY },
+                                        { type: String, value: item.Awarded_QTY },
+                                        { type: String, value: item.Consumption },
+                                        { type: String, value: item.Needed_QTY }
+                                    ]
+                                };
+                            }))
+                        }
+                    ]
+                }).saveAs({
+                    fileName: "PrepBootstrapExcel"
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
