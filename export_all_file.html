@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Expert csv</title>
+  <meta name="theme-color" content="#0B5E97">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+  <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="194x194">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="manifest" href="assets/lib/manifest.json">
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <style type="text/css">
+  .time_tbl td, .time_tbl th {
+    padding: 8px 3px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  .time_tbl input[type=checkbox] {
+    width: 100%;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+
+  .time_tbl input[type=checkbox]:after {
+    content: "";
+    border-bottom: 10px solid white;
+    border-top: 10px solid white;
+    display: block;
+    opacity: 1;
+    box-shadow: 0px 0px 8px 0 rgba(0, 0, 0, 0.2), 0px 0px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .time_tbl input[type=checkbox]:checked:after {
+    border-bottom: 10px solid #00aced;
+    border-top: 10px solid #00aced;
+  }
+    #exportButton {
+        border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <nav class="navbar fixed-top navbar-light bg-info sd">
+   <div class="col-3">
+       <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="openNav()">
+       <i class="fas fa-sliders-h text-light p-1 border border-light"></i></a>
+   </div>
+    <div class="col-4 text-right"><a class="ml-auto" href=""><!-- <img class="" src="assets/images/logo_2.png" style="width:150px;height: 38px"> --></a>
+    </div> 
+    <div class="col">
+      <p class="mb-0 text-center py-1 px-2"><span></span></p>
+    </div> 
+  </nav>
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+    <!-- Button to Open the Modal -->
+    <link rel="stylesheet" type="text/css" href="/Content/font-awesome/css/font-awesome.min.css" />
+
+<div class="container pt-5">
+    <button id="csv" class="btn btn-danger clearfix"><span class="fa fa-file-excel-o"></span> Export to Excel</button>
+    <button class="btn btn-info" id="xml">xml</button>
+    <button class="btn btn-success" id="pdf">pdf</button>
+    
+    <table id="tableID" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="5"><h4 class="text-center w-100 text-info"><b>Request Form</b></h4></th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><label class="col-4 col-lg-2"><b>Entity Name</b></label></th>
+            <th><select class="form-control-sm col">
+                <option>Select Type</option>
+                <option>option1</option>
+                <option>option2</option>
+                <option>option3</option>
+                <option>option4</option>
+              </select></th>
+            <th> <label class="col"><b>اسم الجهة  </b></label></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th rowspan="3" style="vertical-align:middle;">
+                <img src="assets/images/logo2.png" style="height: 100px;width: auto">
+            </th>
+            <th><label class="col-4 col-lg-2"><b>Contact Person</b></label></th>
+            <th><input class="form-control-sm col" type="text" name=""></th>
+            <th><label class="col"><b>اسم الشخص المسئول </b></label></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th><label class="col-4 col-lg-2"><b>Email</b></label></th>
+            <th><input class="form-control-sm col" type="text" name=""></th>
+            <th><label class="col"><b>لبريد الإلكتروني  </b></label></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th><label class="col-4 col-lg-2"><b>Phone</b></label></th>
+            <th><input class="form-control-sm col" type="number" name=""></th>
+            <th><label class="col"><b>لقم التواصل </b></label></th>
+            <th></th>
+          </tr>
+            <tr>
+              <th>Item</th>
+              <th>Ordered_ QTY</th>
+              <th>Awarded_ QTY</th>
+              <th>Consumption</th>
+              <th>Needed_ QTY</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-orange"><b>Pharma</b></td>
+            <td class="table-orange"></td>
+            <td class="table-orange"></td>
+            <td class="table-orange"></td>
+            <td class="table-orange"></td>
+          </tr>
+           <tr>
+            <td>Hydroxychloroquine</td>
+            <td>4m</td>
+            <td>3k</td>
+            <td>1m</td>
+            <td>2m</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+  </div>
+
+</div>
+
+<!-- script files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- you need to include the shieldui css and js assets in order for the components to work -->
+  <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
+  <script type="text/javascript">
+    jQuery(function ($) {
+        $("#csv").click(function () {
+        // CSV format
+        $('#tableID').tableExport({type:'csv'});
+
+      });
+    });
+    jQuery(function ($) {
+        $("#xml").click(function () {
+        // XML Spreadsheet 2003 file format with multiple worksheet support
+
+        $('#tableID').tableExport({type:'excel',
+                        mso: {fileFormat:'xmlss',
+                              worksheetName: ['Table 1','Table 2', 'Table 3']}});
+
+      });
+    });
+    jQuery(function ($) {
+        $("#pdf").click(function () {
+         // PDF format using jsPDF and jsPDF Autotable 
+        $('#tableID').tableExport({type:'pdf',
+                                   jspdf: {orientation: 'l',
+                                           format: 'a4',
+                                           margins: {left:10, right:10, top:20, bottom:20},
+                                           autotable: {styles: {fillColor: 'inherit', 
+                                                                textColor: 'inherit'},
+                                                       tableWidth: 'auto'}
+                                          }
+                                  });
+      });
+    });
+  </script>
+<script type="text/javascript" src="assets/libs/FileSaver/FileSaver.min.js"></script>
+<script type="text/javascript" src="assets/libs/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="assets/libs/jsPDF/jspdf.min.js"></script>
+<script type="text/javascript" src="assets/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+<!-- For IE support include es6-promise before html2canvas -->
+<script type="text/javascript" src="assets/libs/es6-promise/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="assets/libs/html2canvas/html2canvas.min.js"></script>
+<script type="text/javascript" src="assets/tableExport.min.js"></script>
+</body>
+</html>
