@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Ansara Training Institute</title>
+  <title>Navbar</title>
   <meta name="theme-color" content="#0B5E97">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
   <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="194x194">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Changa|Lobster|Ubuntu|Roboto&display=swap" rel="stylesheet">
   <link rel="manifest" href="assets/lib/manifest.json">
   <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
   <style type="text/css">
@@ -57,14 +58,84 @@
     top:-6px;
     right:-3px;
     height: 120%;
-    width: 100%;
+    width: 100%
     z-index: -1;
     border-left: 77px solid transparent;
     border-bottom: 77px solid #f6e3ac;
   }
+  /* skin 1 */
+  .num-block {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3px 3px;
+  }
+  .skin-1 .num-in {
+      /*float: left;
+      width: 94px;*/
+    }
+
+  .skin-1 .num-in span {
+      display: block;
+      float: left;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid #266aac;
+      border-radius: 20px;
+      margin: 0px 3px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+    .skin-1 .num-in span.dis:before {
+    background-color: #ccc !important;
+  }
+
+  .skin-1 .num-in input {
+      float: left;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #d4d4d4;
+      border-radius: 5px;
+      color: #000;
+      text-align: center;
+      padding: 0;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+
+  .skin-1 .num-in span.minus:before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 2px;
+      background-color: #266aac;
+      top: 46%;
+      left: 7px;
+  }
+
+  .skin-1 .num-in span.plus:before, .skin-1 .num-in span.plus:after {
+      content: '';
+      position: absolute;
+      right: 0px;
+      width: 15px;
+      height: 2px;
+      background-color: #266aac;
+      top: 45%;
+      right: 7px;
+  }
+
+  .skin-1 .num-in span.plus:after {
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+  }
+  /* / skin 1 */
   </style>
 </head>
-<body>
+<body style="background: #dbdbdb;">
 
 <div class="container-fluid" style="height: 80px">
   <nav class="navbar fixed-top navbar-light bg-white cus-nav">
@@ -82,11 +153,87 @@
   </nav>
 </div>
 <div class="container-fluid">
+ <div class="">
+    <a href="" class="text-dark">
+    <div class="col-12">
+      <div class="text-center py-2">
+          <img src="assets/images/1.png" class="img-fluid" style="height: 190px;width: 240px;">
+        </div>
+      <div class="card rounded-0 my-2">
+        <div class="card-header py-4">
+        
+        </div>
+        <div class="col-12 text-center py-1" style="height: 40px;font-family: Roboto">
+          <label class="mb-0" style="color: #5a5a5a;font-size: 15px;">Water 2 pieces in this package</label>
+        </div>
+          <div class="col-12 text-center">
+            <label class="text-danger mb-0" style="font-size: 13px;"><b>SAR 10</b></label>
+          </div>
+          <div class="col-12 text-center py-2">
+           <!-- skin 1 -->
+            <div class="num-block skin-1">
+              <div class="num-in">
+                <span class="minus dis"></span>
+                <input type="text" class="in-num" value="1" readonly="">
+                <span class="plus"></span>
+              </div>
+            </div>
+            <!-- / skin 1 -->
+          </div>
+          <div class="card-footer mx-3">
+            <div class="col-12">
+               <button type="button" class="btn btn-primary btn-md w-100" style="font-weight: 700px;">PLACE ORDER</button>
+            </div>
+          </div>
+       </div>
+    </div>
+    </a>
+ </div>
 </div>
 
 <!-- script files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $(".navbar-toggler").click(function(){
+    if($(this).find(".navbar-collapse").toggleClass('collapse show')){
+      $(".color_p").toggle();
+    }
+  });
+});
+</script>
+<script type="text/javascript">
+ /////////////////// product +/-
+$(document).ready(function() {
+  $('.num-in span').click(function () {
+      var $input = $(this).parents('.num-block').find('input.in-num');
+    if($(this).hasClass('minus')) {
+      var count = parseFloat($input.val()) - 1;
+      count = count < 1 ? 1 : count;
+      if (count < 2) {
+        $(this).addClass('dis');
+      }
+      else {
+        $(this).removeClass('dis');
+      }
+      $input.val(count);
+    }
+    else {
+      var count = parseFloat($input.val()) + 1
+      $input.val(count);
+      if (count > 1) {
+        $(this).parents('.num-block').find(('.minus')).removeClass('dis');
+      }
+    }
+    
+    $input.change();
+    return false;
+  });
+  
+});
+// product +/-
+</script>
 </body>
 </html>
