@@ -133,10 +133,175 @@
       transform: rotate(90deg);
   }
   /* / skin 1 */
-  @media (max-width: 325px){
-    .prd_img{
-     height: 130px!important;
+  .mx-15{
+     margin: 0px 15px;
+  }
+  /*small devices */
+  @media (min-width: 290px) and (max-width: 355.98px) { 
+   .prd_img{
+     height: 140px!important;
      width: 170px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:40%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:40%;
+      right:5%;
+    }
+  }
+  @media (min-width: 356px) and (max-width: 475.98px) { 
+   .prd_img{
+     height: 160px!important;
+     width: 190px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:40%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:40%;
+      right:5%;
+    }
+  }
+  /*Extra small devices (portrait phones, less than 576px)*/
+  @media (min-width: 476px) and (max-width: 575.98px) { 
+   .prd_img{
+     height: 190px!important;
+     width: 210px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:45%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:45%;
+      right:5%;
+    }
+  }
+
+  /* Small devices (landscape phones, 576px and up)*/
+  @media (min-width: 576px) and (max-width: 767.98px) {
+   .prd_img{
+     height: 190px!important;
+     width: 210px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:45%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:45%;
+      right:5%;
+    }
+  }
+
+  /*Medium devices (tablets, 768px and up)*/
+  @media (min-width: 768px) and (max-width: 991.98px) {
+   .prd_img{
+     height: 190px!important;
+     width: 210px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:45%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:45%;
+      right:5%;
+    }
+  }
+
+  /* Large devices (desktops, 992px and up)*/
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+   .prd_img{
+     height: 200px!important;
+     width: 230px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:45%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:45%;
+      right:5%;
+    }
+  }
+
+  /* Extra large devices (large desktops, 1200px and up)*/
+  @media (min-width: 1200px) {
+   .prd_img{
+     height: 260px!important;
+     width: 290px!important; 
+     border-radius: 0px;
+     margin: 20px;
+    }
+    .item .pre{
+      position: absolute;
+      top:45%;
+      left:5%;
+    }
+    .item .next{
+      position: absolute;
+      top:45%;
+      right:5%;
+    }
+  }
+  /*============animation css===========*/
+  .prd_img {
+  /*margin:auto;*/
+  position:relative;
+  text-shadow:1px 0 1px white,
+    -1px 0 1px;
+  font-size:30px;
+  text-align:center;
+  background:linear-gradient(to top left ,rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  box-shadow:0 0 5px black;
+  padding:0.25em;
+}
+.prd_img {
+  animation: border-animation 5s infinite;
+}
+@keyframes border-animation {
+    15% {
+      border-radius:5px/30%
+    }
+    40%, 60% {
+      border-radius:50%/20%;
+    }
+    50% {
+      border-radius:100%;
+    }
+    85% {
+      border-radius:30%/5px
+    }
+    0%, 100% {
+      border-radius:0;
     }
   }
   </style>
@@ -161,24 +326,23 @@
 <div class="container-fluid">
  <div class="">
     <a href="" class="text-dark">
-    <div class="col-12 px-0">
-      <div class="text-center py-2">
-          <span><i class="fas fa-arrow-left btn btn-outline-info badge-pill" style="background-color: #fff!important;"></i></span>
+    <div class="col-12 col-sm-7 col-md-6 col-lg-4 mx-auto">
+      <div class="text-center mt-2 py-2 item bg-white">
+          <span><i class="fas fa-arrow-left btn btn-outline-info badge-pill pre" style="background-color: #fff!important;"></i></span>
           <img src="assets/images/1.png" class="img-fluid prd_img" style="height: 160px;width: 200px;">
-          <span><i class="fas fa-arrow-right btn btn-outline-info badge-pill" style="background-color: #fff!important;"></i></span>
+          <span><i class="fas fa-arrow-right btn btn-outline-info badge-pill next" style="background-color: #fff!important;"></i></span>
       </div>
     </div>
-    <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+    <div class="col-12 col-sm-7 col-md-6 col-lg-4 mx-auto">
       <div class="card rounded-0 my-2">
-        <div class="card-header py-4">
-        
+        <div class="card-header py-2">
+           <div class="col-12 text-center py-1" style="height: 43px;font-family: Roboto">
+             <label class="mb-0" style="color: #252525;font-size: 18px;font-weight: bold;">Water 2 pieces in this package</label>
+           </div>
         </div>
-        <div class="card-body py-5 px-0" style="height: 32vh;">
-        <div class="col-12 text-center py-1" style="height: 40px;font-family: Roboto">
-          <label class="mb-0" style="color: #5a5a5a;font-size: 15px;">Water 2 pieces in this package</label>
-        </div>
+        <div class="card-body px-0" style="height: 22vh;padding-top: 12%;">
           <div class="col-12 text-center">
-            <label class="text-danger mb-0" style="font-size: 13px;"><b>SAR 10</b></label>
+            <label class="mb-0" style="font-size: 16px;"><b >Price&ensp;:&ensp;</b><b class="text-danger">SAR 10</b></label>
           </div>
           <div class="col-12 text-center py-2">
            <!-- skin 1 -->
