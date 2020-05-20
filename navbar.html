@@ -304,16 +304,189 @@
       border-radius:0;
     }
   }
+  .languages {
+    font-family: "Source Sans Pro",sans-serif;
+    margin: 0;
+    padding: 0;
+  width: 100px;
+  position: relative;
+  height:40px;
+}
+.languages li {
+    display: none;
+    list-style-type: none;
+    margin-bottom: 1px;
+}
+.languages li a {
+    background: none repeat scroll 0 0 #4c4a49;
+    color: #a7a5a5;
+    display: block;
+    font-size: 0.85em;
+    padding: 10px 0;
+    text-align: center;
+    width: 60px;
+}
+.languages li a:hover {
+    background: none repeat scroll 0 0 #333;
+    border: medium none;
+    color: #a7a5a5;
+}
+.languages li.active {
+    display: block;
+}
+.nav-wrapper {
+  text-align: left;
+  padding: 2px 0px;
+}
+  .sl-nav {
+  display: inline;
+}
+.sl-nav ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+}
+.sl-nav li {
+  cursor: pointer;
+  padding-bottom:0px;
+}
+.sl-nav li ul {
+  display: none;
+}
+.sl-nav li:hover ul {
+  position: absolute;
+  top:29px;
+  right:-60px;
+  display: block;
+  background: #fff;
+  width: 120px;
+  padding-top: 0px;
+  z-index: 1;
+  border-radius:5px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+.sl-nav li:hover .triangle {
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  z-index:10;
+  height: 14px;
+  overflow:hidden;
+  width: 30px;
+  background: transparent;
+}
+.sl-nav li:hover .triangle:after {
+  content: '';
+  display: block;
+  z-index: 20;
+  width: 15px;
+  transform: rotate(45deg) translateY(0px) translatex(10px);
+  height: 15px;
+  background: #fff;
+  border-radius:2px 0px 0px 0px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+.sl-nav li ul li {
+  position: relative;
+  text-align: left;
+  background: transparent;
+  padding: 15px 15px;
+  padding-bottom:0;
+  z-index: 2;
+  font-size: 15px;
+  color: #3c3c3c;
+}
+.sl-nav li ul li:last-of-type {
+  padding-bottom: 15px;
+}
+.sl-nav li ul li span {
+  padding-left: 5px;
+}
+.sl-nav li ul li span:hover, .sl-nav li ul li span.active {
+  color: #146c78;
+}
+.sl-flag {
+  display: inline-block;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+  width: 15px;
+  height: 15px;
+  background: #aaa;
+  border-radius: 50%;
+  position: relative;
+  top: 2px;
+  overflow: hidden;
+}
+.flag-usa {
+background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTM0A1t6AAABhUlEQVQ4T2Ows82PjGixsc4LD2tysC/09Kjw8622tyuICG8u0w/cpGSCBzF4e1VmZkzw9anOzOj38a4KCW4IC22ECHYk1l9tn4gHMeTlTnZxLikvm+XiUpKW2hvgX+vnV5OVOQEoOGfOtv94AYOzU3Fd7XxHh6Lq6rlurqUx0W0J8Z1AnbW18yotonaYuOJBDBXls4A+bGpaBCTz86YEBtQCvVBSPAPIbY0oP1/aiAcxABU1Ny+2tclvbFjo5FgUF9uenNwNDLnmpkWEnV1TPRcY1O1tS4H6i4umA/0MDK2K8tlAwRqHpP1uoXgQKKraWpcClTY3LQZaCLQ5NaUX5OaWJY3++SeTC/AgBmA4AXUClUJs9ver8fKsAAYEUJCws4G21dXNB1oFdD/Qz8DQTk4C+bm2dn6DZ9bRiDQ8iAEYt8CoBpK5YBIYw0AEEZwSXX4oMB4PYoC6gCzAcDqrjGzEsMfen2xEmbMv1rSTjRi26dqRjShz9o2+6WQjBrSShQSkZAIADvW/HLrLY6cAAAAASUVORK5CYII=');
+  background-size: cover;
+  background-position: center center;
+}
+.flag-sa {
+  background-size: cover;
+  background-position: center center;
+  background-image: url('assets/images/sa.png');
+}
+.count_badge{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background-color: rgb(246, 227, 172);
+    font-size: 10px;
+    color: rgb(67, 67, 64);
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    z-index: 100;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-image: initial;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
   </style>
 </head>
 <body style="background: #dbdbdb;">
 
 <div class="container-fluid" style="height: 80px">
   <nav class="navbar fixed-top navbar-light bg-white cus-nav">
-   <div class="col-4">
-       <a class="ml-auto" href=""><img class="" src="assets/images/logooriginal.png" style="width:auto;height: 48px"></a>
+   <div class="col-4 p-0">
+       <!-- <ul class="languages">
+          <li class="active">
+            <a href="/fr/">FR<i class="fa fa-caret-down"></i></a>
+          </li>
+          <li><a href="/nl/">NL</a></li>
+          <li><a href="/de/">DE</a></li>
+          <li><a href="/en/">EN</a></li>
+          <li><a href="/ru/">RU</a></li>
+      </ul> -->
+      <div class="nav-wrapper d-inline">
+        <div class="sl-nav">
+          <ul>
+            <li><b class="lan_name" style="font-size:12px">Arabic</b> 
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <div class="triangle"></div>
+              <ul>
+                <li><i class="sl-flag flag-usa"><div id="usa"></div></i> <span class="active">English</span></li>
+                <li><i class="sl-flag flag-sa"><div id="sa"></div></i> <span>Arabic</span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="position-relative d-inline">
+        |&ensp;<img class="bag_icon" src="assets/images/bag.png" style="height: 21px;width: auto"></i>
+        <span class="count_badge">2</div>
+      </span>
    </div>
-    <div class="col-4 text-right">
+    <div class="col-4 m-auto">
+      <a class="" href=""><img class="" src="assets/images/logooriginal.png" style="width:auto;height: 48px"></a>
     </div> 
     <div class="ml-auto">
       <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="openNav()">
@@ -342,7 +515,7 @@
         </div>
         <div class="card-body px-0" style="height: 21vh;padding-top: 10%;">
           <div class="col-12 text-center">
-            <label class="mb-0" style="font-size: 16px;"><b >Price&ensp;:&ensp;</b><b class="text-danger">SAR 10</b></label>
+            <label class="mb-0" style="font-size: 16px;"><b>Price&ensp;:&ensp;</b><b class="text-danger">SAR 10</b></label>
           </div>
           <div class="col-12 text-center py-2">
            <!-- skin 1 -->
@@ -410,6 +583,17 @@ $(document).ready(function() {
   
 });
 // product +/-
+</script>
+<script type="text/javascript">
+  $(function () {
+    $el_languages = $('.languages');
+    $el_languages.hover(function () {
+        $el_languages.find('li').show();
+    }, function () {
+        $el_languages.find('li:not(.active)').hide();
+    });
+});
+
 </script>
 </body>
 </html>
