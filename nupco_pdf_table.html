@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+
+  <title>ASN</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <meta name="theme-color" content="#0B5E97">
+  <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="194x194">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Roboto+Condensed|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- Style files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <link rel="manifest" href="assets/lib/manifest.json">
+
+  <style type="text/css">
+    body {
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .table_fixed_height thead tr th {
+        background-color: #17a2b8;
+        color: #fff;
+        position: sticky;
+        top: -1px;
+        z-index: 10;
+        padding: 5px 5px;
+        white-space: nowrap;
+    }
+    .table_fixed_height tbody td {
+        padding: 5px 5px!important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <header>
+    <nav class="navbar navbar-expand-sm justify-content-center py-0 shadow fixed-top bg-white" style="border-bottom: 3px solid #17a2b8;">
+      <a  class="navbar-brand py-1 mr-0" href="#" onclick="goBack()">
+        <i class="fas fa-angle-left pl-2" style="font-size: 30px;"></i>
+      </a>
+      <div class="navbar-brand pl-3 py-1">
+        <a href="">
+          <img src="assets/images/logo2.png" height="50px">
+        </a>
+      </div>
+         <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link">
+                <h3 class="mb-0">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h3></a>
+            </li>
+          </ul>
+              <div class="navbar-brand text-right mx-0">
+                <a href="">
+                          <i class="fas fa-power-off"></i> Logout
+                </a>
+              </div>
+            <a class="navbar-brand text-right mx-0"></a>
+    </nav>
+  </header>
+  <div class="row justify-content-center mt-5 pt-4">
+      <div class="col-md-6">
+        <table id="example" class="table table-borderless mb-0 dataTable">
+          <tbody><tr>
+            <td class="py-1 px-1" width="25%"><b>ASN ID</b></td>
+            <td class="py-1 px-0">:</td>
+            <td class="py-1 px-1">000-000-003</td>
+          </tr>
+           <tr>
+            <td class="py-1 px-1" width="25%"><b>PO No</b></td>
+            <td class="py-1 px-0">:</td>
+            <td class="py-1 px-1">4500015950</td>
+          </tr>
+           <tr>
+            <td class="py-1 px-1" width="25%"><b>Ship To</b></td>
+            <td class="py-1 px-0">:</td>
+            <td class="py-1 px-1"></td>
+          </tr>
+        </tbody></table>
+      </div>
+      <div class="col-md-6">
+        <table class="table table-borderless mb-0 float-right">
+          <tbody><tr>
+            <td class="py-1 px-1" width="25%"><b>Delivery Date</b></td>
+            <td class="py-1 px-0">: </td>
+            <td class="py-1 px-1">2020-07-12            </td>
+          </tr>   
+          </tr>
+           <tr style="display: none;" id="show">
+            <td class="py-1 px-1" width="25%"><b>Update Form-1</b></td>
+            <td class="py-1 px-0">: </td>
+            <td class="py-1 px-1 d-flex">
+              <input class="form-control" type="file" name="form" style="width: 50%;line-height: 1.3;">&nbsp; <button class="btn btn-danger btn-sm" id="change2" type="button" style="font-size: 24px; line-height: 1; padding: 0.20rem .65rem;">×</button>
+             </td>
+          </tr>
+          <tr>
+              <td class="py-1 px-1" width="25%"><b>Status</b></td>
+              <td class="py-1 px-0">: </td>
+              <td class="py-1 px-0"><span class="text-success px-1"><b>ACCEPTED</b></span></td>
+          </tr> 
+          <tr>
+              <td class="py-1 px-1" width="25%"><b>Pallet Count</b></td>
+              <td class="py-1 px-0">: </td>
+              <td class="py-1 px-1"><input type="text" class="form-control-sm" id="total_pallets" name="total_pallet_count" value="10" readonly="" style="width:30%;border: 1px lightgray"></td>
+              <input type="hidden" name="total_pallet_count_old" value="10">
+              <input type="hidden" name="delivery_date" value="2020-07-12">
+          </tr>
+         </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row justify-content-center mx-0">
+     
+        <div class="col-12 text-center px-0 table_fixed_height">
+          <table class="table table-bordered mx-auto mb-0">
+            <thead class="bg-info text-white">
+              <tr>
+                <th class="px-1" width="6%">PO Item No</th>
+                <th class="px-1" width="12%">Nupco Code</th>
+                <th class="px-1">Nupco Material Description</th><!-- 
+                <th class="px-1" width="12%">Moda Code</th> -->
+                <th class="px-1" width="8%">Delivery qty </th><!-- 
+                <th class="px-1" width="8%">Batch No</th> -->
+                <th class="px-1" width="7%">Pallet Count</th>
+                <th class="px-1" width="8%">Batch Qty</th>
+                <th class="px-1" width="8%">Batch Number</th>
+                <th class="px-1" width="8%">Manufacture Date</th>
+                <th class="px-1" width="8%">Expiry Date</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+                           <tr>
+                <td class="px-1"><input type="text" name="po_item_5" class="form-control" value="10" readonly="" required=""></td>
+
+                <td class="px-1"><input type="text" name="nupco_material_5" class="form-control" value="4228160310400" readonly="" required=""></td>
+
+                <td class="px-1"><input type="text" name="nupco_material_description_5" class="form-control" value="PLAIN HAND WASH SOAP 1L" readonly="" required=""></td>
+
+                <td class="px-1"><input type="number" name="delivery_qty_5" class="form-control request_qty_10" min="0" value="22" readonly="" required=""></td>
+
+                <td class="px-1"><input type="text" name="pallet_count_5" class="form-control totalpallet" onkeyup="chk_pallet()" value="5" readonly="" required=""></td>
+                <td class="px-1"><input type="text" name="" class="form-control"  value="22" readonly="" required=""></td>
+                <td class="px-1"><input type="text" name="" class="form-control"  value="2222" readonly="" required=""></td>
+                <td class="px-1"><input type="date" name="manufacturing_date[]" class="form-control" value="2020-07-01" readonly=""></td>
+                <td class="px-1"><input type="date" name="expiry_date[]" class="form-control" value="2020-08-08" readonly=""></td>
+
+              </tr>
+            <input type="hidden" name="field_id[]" value="5">
+                          <tr>
+                <td class="px-1"><input type="text" name="po_item_6" class="form-control" value="20" readonly="" required=""></td>
+
+                <td class="px-1"><input type="text" name="nupco_material_6" class="form-control" value="4713150200800" readonly="" required=""></td>
+
+                <td class="px-1"><input type="text" name="nupco_material_description_6" class="form-control" value="WIPE DISINFECTANT ALCOHOL FREE" readonly="" required=""></td>
+
+                <td class="px-1"><input type="number" name="delivery_qty_6" class="form-control request_qty_20" min="0" value="67" readonly="" required=""></td>
+                <td class="px-1"><input type="text" name="pallet_count_6" class="form-control totalpallet" onkeyup="chk_pallet()" value="5" readonly="" required=""></td>
+                <td class="px-1"><input type="text" name="" class="form-control"  value="22" readonly="" required=""></td>
+                <td class="px-1"><input type="text" name="" class="form-control"  value="2222" readonly="" required=""></td>
+                <td class="px-1"><input type="date" name="manufacturing_date[]" class="form-control" value="2020-07-01" readonly=""></td>
+                <td class="px-1"><input type="date" name="expiry_date[]" class="form-control" value="2020-08-08" readonly=""></td>
+              </tr>
+            <input type="hidden" name="field_id[]" value="6">
+                        </tbody>
+          </table>
+        </div>
+
+        <input type="hidden" name="rgr_id" value="000-000-003">
+              
+       <!--  -->  
+  </div>
+  
+</div>
+
+<!-- script files -->
+  <script src="https://kit.fontawesome.com/80895110d5.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
