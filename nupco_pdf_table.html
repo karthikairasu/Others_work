@@ -20,22 +20,27 @@
   
   <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
   <link rel="manifest" href="assets/lib/manifest.json">
-
   <style type="text/css">
     body {
         font-family: 'Roboto Condensed', sans-serif;
     }
     .table_fixed_height thead tr th {
-        background-color: #17a2b8;
-        color: #fff;
+        background-color: #ffffff;
+        color: #000000;
         position: sticky;
-        top: -1px;
+        top: 0px;
         z-index: 10;
-        padding: 5px 5px;
+        padding: 10px 5px;
         white-space: nowrap;
+        border: 1px solid #000000;
+        /*outline: 2px solid #565656;
+        outline-style: auto;*/
     }
     .table_fixed_height tbody td {
         padding: 5px 5px!important;
+    }
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #969696;
     }
   </style>
 </head>
@@ -55,7 +60,7 @@
          <ul class="navbar-nav mx-auto">
             <li class="nav-item">
               <a class="nav-link">
-                <h3 class="mb-0">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h3></a>
+                <!-- <h3 class="mb-0">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h3> --></a>
             </li>
           </ul>
               <div class="navbar-brand text-right mx-0">
@@ -66,62 +71,86 @@
             <a class="navbar-brand text-right mx-0"></a>
     </nav>
   </header>
-  <div class="row justify-content-center mt-5 pt-4">
-      <div class="col-md-6">
-        <table id="example" class="table table-borderless mb-0 dataTable">
-          <tbody><tr>
-            <td class="py-1 px-1" width="25%"><b>ASN ID</b></td>
-            <td class="py-1 px-0">:</td>
-            <td class="py-1 px-1">000-000-003</td>
-          </tr>
-           <tr>
-            <td class="py-1 px-1" width="25%"><b>PO No</b></td>
-            <td class="py-1 px-0">:</td>
-            <td class="py-1 px-1">4500015950</td>
-          </tr>
-           <tr>
-            <td class="py-1 px-1" width="25%"><b>Ship To</b></td>
-            <td class="py-1 px-0">:</td>
-            <td class="py-1 px-1"></td>
-          </tr>
-        </tbody></table>
+  <div class="container-fluid mt-5 pt-4">
+    <div class="row">
+      <div class="col-md-2 col-sm-6 col-12 text-center">
+      
       </div>
-      <div class="col-md-6">
-        <table class="table table-borderless mb-0 float-right">
-          <tbody><tr>
-            <td class="py-1 px-1" width="25%"><b>Delivery Date</b></td>
-            <td class="py-1 px-0">: </td>
-            <td class="py-1 px-1">2020-07-12            </td>
-          </tr>   
-          </tr>
-           <tr style="display: none;" id="show">
-            <td class="py-1 px-1" width="25%"><b>Update Form-1</b></td>
-            <td class="py-1 px-0">: </td>
-            <td class="py-1 px-1 d-flex">
-              <input class="form-control" type="file" name="form" style="width: 50%;line-height: 1.3;">&nbsp; <button class="btn btn-danger btn-sm" id="change2" type="button" style="font-size: 24px; line-height: 1; padding: 0.20rem .65rem;">×</button>
-             </td>
-          </tr>
-          <tr>
-              <td class="py-1 px-1" width="25%"><b>Status</b></td>
-              <td class="py-1 px-0">: </td>
-              <td class="py-1 px-0"><span class="text-success px-1"><b>ACCEPTED</b></span></td>
-          </tr> 
-          <tr>
-              <td class="py-1 px-1" width="25%"><b>Pallet Count</b></td>
-              <td class="py-1 px-0">: </td>
-              <td class="py-1 px-1"><input type="text" class="form-control-sm" id="total_pallets" name="total_pallet_count" value="10" readonly="" style="width:30%;border: 1px lightgray"></td>
-              <input type="hidden" name="total_pallet_count_old" value="10">
-              <input type="hidden" name="delivery_date" value="2020-07-12">
-          </tr>
-         </tbody>
-        </table>
+      <div class="col-md-8 col-sm-6 col-12 text-center">         
+        <h5 class="text-center"><b>Advanced Shipping Notification</b></h5>
+        <h3 class="text-center">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h3>
+      </div>
+      <div class="col-md-2 col-sm-6 col-12 text-center">
+        <a href="">
+          <img src="assets/images/logo2.png" height="60px">
+        </a>
       </div>
     </div>
+    <form class="" action="">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-12">
+            <div class="form-row">
+              <label class="col-md-4 col-sm-4 col-4"><b>ASN ID</b></label>
+              <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+              <label class="col-md-7 col-sm-7 col-7" id="RGR_ID"
+                >000-000-004
+              </label>
+            </div>
+            <div class="form-row py-1">
+              <label class="col-md-4 col-sm-4 col-4"><b>Po No</b></label>
+              <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+              <label class="col-md-7 col-sm-7 col-7" id="Po_No"
+                >4500014260
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="col-md-4 col-sm-4 col-4"><b>Ship To</b></label>
+              <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+              <label class="col-md-7 col-sm-7 col-7" id="Ship_To">AJZN </label>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 text-center">
+            <!-- <a href="">
+              <img src="assets/images/logo2.png" height="70px">
+            </a> -->
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 order-3 order-sm-3">
+            <div class="form-row">
+              <label class="col-md-4 col-sm-4 col-4"
+                ><b>Delivery Date</b></label
+              >
+              <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+              <label class="col-md-7 col-sm-7 col-7" id="Delivery Date"
+                >2020-02-05
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="col-md-4 col-sm-4 col-4"
+                ><b>Pallet Count</b></label
+              >
+              <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+              <label class="col-md-7 col-sm-7 col-7" id="Pallet Count"
+                >10
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="col-md-4 col-sm-4 col-4"
+                ><b>Status</b></label
+              >
+              <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+              <label class="col-md-7 col-sm-7 col-7" id="Status"
+                ><span class="text-success px-1"><b>ACCEPTED</b></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>   
+  </div>
     <div class="row justify-content-center mx-0">
      
         <div class="col-12 text-center px-0 table_fixed_height">
-          <table class="table table-bordered mx-auto mb-0">
-            <thead class="bg-info text-white">
+          <table class="table table-bordered mx-auto">
+            <thead class="">
               <tr>
                 <th class="px-1" width="6%">PO Item No</th>
                 <th class="px-1" width="12%">Nupco Code</th>
@@ -139,39 +168,150 @@
             </thead>
 
             <tbody>
-                           <tr>
-                <td class="px-1"><input type="text" name="po_item_5" class="form-control" value="10" readonly="" required=""></td>
-
-                <td class="px-1"><input type="text" name="nupco_material_5" class="form-control" value="4228160310400" readonly="" required=""></td>
-
-                <td class="px-1"><input type="text" name="nupco_material_description_5" class="form-control" value="PLAIN HAND WASH SOAP 1L" readonly="" required=""></td>
-
-                <td class="px-1"><input type="number" name="delivery_qty_5" class="form-control request_qty_10" min="0" value="22" readonly="" required=""></td>
-
-                <td class="px-1"><input type="text" name="pallet_count_5" class="form-control totalpallet" onkeyup="chk_pallet()" value="5" readonly="" required=""></td>
-                <td class="px-1"><input type="text" name="" class="form-control"  value="22" readonly="" required=""></td>
-                <td class="px-1"><input type="text" name="" class="form-control"  value="2222" readonly="" required=""></td>
-                <td class="px-1"><input type="date" name="manufacturing_date[]" class="form-control" value="2020-07-01" readonly=""></td>
-                <td class="px-1"><input type="date" name="expiry_date[]" class="form-control" value="2020-08-08" readonly=""></td>
-
-              </tr>
-            <input type="hidden" name="field_id[]" value="5">
-                          <tr>
-                <td class="px-1"><input type="text" name="po_item_6" class="form-control" value="20" readonly="" required=""></td>
-
-                <td class="px-1"><input type="text" name="nupco_material_6" class="form-control" value="4713150200800" readonly="" required=""></td>
-
-                <td class="px-1"><input type="text" name="nupco_material_description_6" class="form-control" value="WIPE DISINFECTANT ALCOHOL FREE" readonly="" required=""></td>
-
-                <td class="px-1"><input type="number" name="delivery_qty_6" class="form-control request_qty_20" min="0" value="67" readonly="" required=""></td>
-                <td class="px-1"><input type="text" name="pallet_count_6" class="form-control totalpallet" onkeyup="chk_pallet()" value="5" readonly="" required=""></td>
-                <td class="px-1"><input type="text" name="" class="form-control"  value="22" readonly="" required=""></td>
-                <td class="px-1"><input type="text" name="" class="form-control"  value="2222" readonly="" required=""></td>
-                <td class="px-1"><input type="date" name="manufacturing_date[]" class="form-control" value="2020-07-01" readonly=""></td>
-                <td class="px-1"><input type="date" name="expiry_date[]" class="form-control" value="2020-08-08" readonly=""></td>
-              </tr>
-            <input type="hidden" name="field_id[]" value="6">
-                        </tbody>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+               <tr>
+                   <td>10</td>
+                   <td>4228160310400</td>
+                   <td>PLAIN HAND WASH SOAP 1L</td>
+                   <td>22</td>
+                   <td>5</td>
+                   <td>22</td>
+                   <td>2222</td>
+                   <td>07/01/2020</td>
+                   <td>08/08/2020</td>
+               </tr>
+            </tbody>
           </table>
         </div>
 
