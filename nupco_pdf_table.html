@@ -42,6 +42,12 @@
     .table-bordered td, .table-bordered th {
         border: 1px solid #969696;
     }
+    .fixed_btn{
+        position: fixed;
+        bottom: 25px;
+        right: calc( 46% - 32px );
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
   </style>
 </head>
 <body>
@@ -73,14 +79,14 @@
   </header>
   <div class="container-fluid mt-5 pt-4">
     <div class="row">
-      <div class="col-md-2 col-sm-6 col-12 text-center">
+      <div class="col-md-2 col-sm-2 col-12 text-center">
       
       </div>
-      <div class="col-md-8 col-sm-6 col-12 text-center">         
+      <div class="col-md-8 col-sm-8 col-12 text-center">         
         <h5 class="text-center"><b>Advanced Shipping Notification</b></h5>
         <h3 class="text-center">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h3>
       </div>
-      <div class="col-md-2 col-sm-6 col-12 text-center">
+      <div class="col-md-2 col-sm-2 col-12 pb-2 text-center">
         <a href="">
           <img src="assets/images/logo2.png" height="60px">
         </a>
@@ -149,7 +155,7 @@
     <div class="row justify-content-center mx-0">
      
         <div class="col-12 text-center px-0 table_fixed_height">
-          <table class="table table-bordered mx-auto">
+          <table id="tableID" class="table table-bordered mx-auto">
             <thead class="">
               <tr>
                 <th class="px-1" width="6%">PO Item No</th>
@@ -256,61 +262,6 @@
                    <td>07/01/2020</td>
                    <td>08/08/2020</td>
                </tr>
-               <tr>
-                   <td>10</td>
-                   <td>4228160310400</td>
-                   <td>PLAIN HAND WASH SOAP 1L</td>
-                   <td>22</td>
-                   <td>5</td>
-                   <td>22</td>
-                   <td>2222</td>
-                   <td>07/01/2020</td>
-                   <td>08/08/2020</td>
-               </tr>
-               <tr>
-                   <td>10</td>
-                   <td>4228160310400</td>
-                   <td>PLAIN HAND WASH SOAP 1L</td>
-                   <td>22</td>
-                   <td>5</td>
-                   <td>22</td>
-                   <td>2222</td>
-                   <td>07/01/2020</td>
-                   <td>08/08/2020</td>
-               </tr>
-               <tr>
-                   <td>10</td>
-                   <td>4228160310400</td>
-                   <td>PLAIN HAND WASH SOAP 1L</td>
-                   <td>22</td>
-                   <td>5</td>
-                   <td>22</td>
-                   <td>2222</td>
-                   <td>07/01/2020</td>
-                   <td>08/08/2020</td>
-               </tr>
-               <tr>
-                   <td>10</td>
-                   <td>4228160310400</td>
-                   <td>PLAIN HAND WASH SOAP 1L</td>
-                   <td>22</td>
-                   <td>5</td>
-                   <td>22</td>
-                   <td>2222</td>
-                   <td>07/01/2020</td>
-                   <td>08/08/2020</td>
-               </tr>
-               <tr>
-                   <td>10</td>
-                   <td>4228160310400</td>
-                   <td>PLAIN HAND WASH SOAP 1L</td>
-                   <td>22</td>
-                   <td>5</td>
-                   <td>22</td>
-                   <td>2222</td>
-                   <td>07/01/2020</td>
-                   <td>08/08/2020</td>
-               </tr>
             </tbody>
           </table>
         </div>
@@ -319,7 +270,7 @@
               
        <!--  -->  
   </div>
-  
+  <div class="fixed_btn"><button class="btn btn-info" type="button">Export Pdf</button></div>
 </div>
 
 <!-- script files -->
@@ -327,5 +278,30 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+      jQuery(function ($) {
+        $("#pdf").click(function () {
+         // PDF format using jsPDF and jsPDF Autotable 
+        $('#tableID').tableExport({type:'pdf',
+                                   jspdf: {orientation: 'p',
+                                           format: 'a4',
+                                           margins: {left:10, right:10, top:20, bottom:20},
+                                           autotable: {styles: {fillColor: 'inherit', 
+                                                                textColor: 'inherit'},
+                                                       tableWidth: 'auto'}
+                                          }
+                                  });
+      });
+    });
+  </script>
+  <script type="text/javascript" src="assets/libs/FileSaver/FileSaver.min.js"></script>
+<script type="text/javascript" src="assets/libs/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="assets/libs/jsPDF/jspdf.min.js"></script>
+<script type="text/javascript" src="assets/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+<!-- For IE support include es6-promise before html2canvas -->
+<script type="text/javascript" src="assets/libs/es6-promise/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="assets/libs/html2canvas/html2canvas.min.js"></script>
+<script type="text/javascript" src="assets/tableExport.min.js"></script>
 </body>
 </html>
