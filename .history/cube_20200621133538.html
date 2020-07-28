@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ansara Training Institute</title>
+    <meta name="theme-color" content="#0B5E97" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/icon.png"
+      sizes="194x194"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Changa|Lobster|Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="assets/lib/manifest.json" />
+    <link rel="stylesheet" type="text/css" href="assets/lib/style.css" />
+    <style>
+      body {
+        font-family: arial;
+      }
+      .text .col:nth-child(1) {
+        font-size: 12px;
+        font-weight: medium;
+      }
+      .text .col:nth-child(2) {
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .clear {
+        margin: 0.1em;
+      }
+      #infect {
+        background: #636363;
+      }
+
+      #death {
+        background: #000000;
+      }
+
+      #cured {
+        background: #969696;
+      }
+
+      .right {
+        text-align: right;
+      }
+      .live-text {
+        background: crimson;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: italic;
+        padding-left: 0.5em;
+        padding: 0.3em 0.8em 0.3em 0.2em;
+        text-align: center;
+      }
+
+      .row {
+        display: flex;
+        font-size: 1em;
+      }
+
+      .row:not(.text) {
+      }
+
+      .live-text-row {
+        margin: 0.2em 0;
+        font-size: 0.7em;
+        background: #484848;
+        padding: 0.2em 0;
+        margin-top: 0.3em;
+      }
+
+      .live-text-row div {
+        text-align: left;
+      }
+      .col-3 {
+        flex: 0.3;
+      }
+      .col-7 {
+        flex: 0.7;
+      }
+      .col {
+        flex: 1;
+      }
+      .row.text .col:nth-child(2) {
+        text-align: center;
+      }
+      .row.text {
+        padding: 0.1em;
+        color: white;
+      }
+
+      .heading-text {
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0em 0.4em;
+        font-family: arial;
+      }
+
+      .live-text-col {
+        margin: 0.3em 0;
+      }
+
+      td a {
+        font-size: 10px !important;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 0.8em;
+        padding: 0.1em;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .scene {
+        width: 120px;
+        height: 120px;
+        border: 0px solid #ccc;
+        margin: auto;
+      }
+
+      .title {
+        font-weight: bold;
+      }
+
+      .cube__face {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .cube__face {
+        background: #f2f2f2;
+      }
+
+      #spinner {
+        -webkit-animation-name: spinner5;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 17s;
+
+        animation-name: spinner5;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+        animation-duration: 17s;
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      @keyframes spinner5 {
+        from,
+        20% {
+          -moz-transform: rotateY(0);
+          -ms-transform: rotateY(0);
+          transform: rotateY(0);
+        }
+        25%,
+        45% {
+          -moz-transform: rotateY(-90deg);
+          -ms-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+        }
+        50%,
+        70% {
+          -moz-transform: rotateY(-180deg);
+          -ms-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+        }
+        75%,
+        95% {
+          -moz-transform: rotateY(-270deg);
+          -ms-transform: rotateY(-270deg);
+          transform: rotateY(-270deg);
+        }
+        to {
+          -moz-transform: rotateY(-360deg);
+          -ms-transform: rotateY(-360deg);
+          transform: rotateY(-360deg);
+        }
+      }
+
+      .cube__face--front {
+        transform: rotateY(0deg) translateZ(60px);
+      }
+      .cube__face--right {
+        transform: rotateY(90deg) translateZ(60px);
+      }
+      .cube__face--back {
+        transform: rotateY(180deg) translateZ(60px);
+      }
+      .cube__face--left {
+        transform: rotateY(270deg) translateZ(60px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="scene">
+        <div id="spinner">
+          <div class="cube__face cube__face--front S21">
+            <div>
+              <div>
+                <div class="live-text-col">
+                  <div class="live-text">
+                    <span class="blinking">●</span> COVID-19
+                  </div>
+                </div>
+              </div>
+              <div onclick="clickHandler('india')">
+                <div class="row header-row">
+                  <div class="col">
+                    <div class="heading-text">India</div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                  <div class="col px-0">
+                    <div class="row text mx-0" id="infect">
+                      <div class="col party-3">
+                        Cases
+                      </div>
+                      <div class="col party-3-score india-in">4,10,461</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                  <div class="col px-0">
+                    <div class="row text mx-0" id="death">
+                      <div class="col party-4">
+                        Deaths
+                      </div>
+                      <div class="col party-4-score india-de">13,254</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="clear"></div>
+                <div class="row">
+                  <div class="col px-0">
+                    <div class="row text mx-0" id="cured">
+                      <div class="col party-4">
+                        Cured
+                      </div>
+                      <div class="col party-4-score india-cu">2,27,556</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cube__face cube__face--left S20">
+            <div>
+              <div class="live-text-col">
+                <div class="live-text">
+                  <span class="blinking">●</span> COVID-19
+                </div>
+              </div>
+            </div>
+            <div onclick="clickHandler('world')">
+              <div class="row header-row">
+                <div class="col">
+                  <div class="heading-text">Worldwide</div>
+                </div>
+              </div>
+
+              <div class="clear"></div>
+              <div class="row">
+                <div class="col px-0">
+                  <div class="row text mx-0" id="infect">
+                    <div class="col party-1">
+                      Cases
+                    </div>
+                    <div class="col party-1-score world-in">8,770,629</div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="row">
+                <div class="col px-0">
+                  <div class="row text mx-0" id="death">
+                    <div class="col party-2">
+                      Deaths
+                    </div>
+                    <div class="col party-2-score world-de">464,029</div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="row">
+                <div class="col px-0">
+                  <div class="row text mx-0" id="cured">
+                    <div class="col party-4">
+                      Cured
+                    </div>
+                    <div class="col party-4-score world-cu">4,347,584</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cube__face cube__face--back S21">
+            <div>
+              <div>
+                <div class="live-text-col">
+                  <div class="live-text">
+                    <span class="blinking">●</span> COVID-19
+                  </div>
+                </div>
+              </div>
+              <div onclick="clickHandler('india')">
+                <div class="row header-row">
+                  <div class="col">
+                    <div class="heading-text">India</div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                  <div class="col">
+                    <div class="row text" id="infect">
+                      <div class="col party-3">
+                        Cases
+                      </div>
+                      <div class="col party-3-score india-in">4,10,461</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                  <div class="col">
+                    <div class="row text" id="death">
+                      <div class="col party-4">
+                        Deaths
+                      </div>
+                      <div class="col party-4-score india-de">13,254</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                  <div class="col">
+                    <div class="row text" id="cured">
+                      <div class="col party-4">
+                        Cured
+                      </div>
+                      <div class="col party-4-score india-cu">2,27,556</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cube__face cube__face--right S20">
+            <div>
+              <div class="live-text-col">
+                <div class="live-text">
+                  <span class="blinking">●</span> COVID-19
+                </div>
+              </div>
+            </div>
+            <div onclick="clickHandler('world')">
+              <div class="row header-row">
+                <div class="col">
+                  <div class="heading-text">Worldwide</div>
+                </div>
+              </div>
+
+              <div class="clear"></div>
+              <div class="row">
+                <div class="col">
+                  <div class="row text" id="infect">
+                    <div class="col party-1">
+                      Cases
+                    </div>
+                    <div class="col party-1-score world-in">8,770,629</div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="row">
+                <div class="col">
+                  <div class="row text" id="death">
+                    <div class="col party-2">
+                      Deaths
+                    </div>
+                    <div class="col party-2-score world-de">464,029</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="row">
+              <div class="col">
+                <div class="row text" id="cured">
+                  <div class="col party-4">
+                    Cured
+                  </div>
+                  <div class="col party-4-score world-cu">4,347,584</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
